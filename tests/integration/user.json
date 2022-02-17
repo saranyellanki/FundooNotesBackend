@@ -1,0 +1,41 @@
+{
+  "UserData1": {
+      "firstName": "Saran",
+      "lastName": "Yellanki",
+      "email": "saran.yellanki12@gmail.com",
+      "password": "saran44352"
+  },
+  "UserData2": {
+      "email": "saran.yellanki12@gmail.com",
+      "password": "newPassTest"
+  },
+  "UserData3": {
+      "Title": "Header",
+      "Description": "This is a test note",
+      "Color": "Red",
+      "isArchieved": false,
+      "isDeleted": true
+  },
+  "singleNote":{
+      "_id":"61ed97e28c68b71f37283684"
+  },
+  "archievedNotes":{
+      "isArchieved":false
+  },
+  "trashNotes":{
+      "isDeleted":true
+  },
+  "updateNote":{
+      "_id":"61ed97e28c68b71f37283684",
+      "Color":"Blue"
+  },
+  "deleteNote":{
+      "_id":"61ed97e28c68b71f37283684"
+  },
+  "forgetPassword": {
+      "email":"saran.yellanki12@gmail.com"
+  },
+  "resetPassword": {
+      "password":"newPassTest"
+  }
+}
