@@ -11,7 +11,7 @@ import jwt from 'jsonwebtoken';
  */
 export const auth = async (req, res, next) => {
   try {
-    let bearerToken = req.headers['token'];
+    let bearerToken = req.headers['token']; //req.header('Authorization')
     if (!bearerToken)
       throw {
         code: HttpStatus.BAD_REQUEST,

@@ -58,6 +58,24 @@ export const newUser = async (req, res, next) => {
   }
 };
 
+// export const newUser = (req, res, next) => {
+//   try {
+//     UserService.newUser(req.body, (err, data) => {
+//       if (err) {
+//         throw err;
+//       } else {
+//         res.status(HttpStatus.CREATED).json({
+//           code: HttpStatus.CREATED,
+//           data: data,
+//           message: 'User created successfully'
+//         });
+//       }
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
 /**
  * Controller to login a user
  * @param  {object} req - request object
@@ -69,12 +87,32 @@ export const newUser = async (req, res, next) => {
     const data = await UserService.login(req.body)
     res.status(HttpStatus.OK).json({
       message: "Login Successfull",
-      token : data
+      data : data
     })
   } catch (error) {
     next(error);
   }
 }
+
+// export const login = (req, res, next) => {
+//   try {
+//     UserService.login(req.body)
+//     .then((data) => {
+//       res.status(HttpStatus.OK).json({
+//         message: "Login Successfull",
+//         data: data
+//       })
+//     }).catch((err) => {
+//       res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+//         ERROR: "Error",
+//         data: err
+//       })
+//     })
+//   }
+//   catch(err) {
+//     next(err)
+//   }
+// }
 
 export const forgetPassword = async (req, res, next) => {
   try {
@@ -83,7 +121,7 @@ export const forgetPassword = async (req, res, next) => {
       token: data
     })
   } catch (error) {
-    next(error) 
+    next(error)
   }
 }
 
@@ -91,8 +129,8 @@ export const resetPassword = async (req, res, next) => {
   try {
     const data = await UserService.resetPassword(req);
     res.status(HttpStatus.OK).json({
-      message : "Password reset",
-      data : data
+      message: "Password reset",
+      data: data
     })
   } catch (error) {
     next(error)

@@ -73,19 +73,19 @@ describe('User APIs Test', () => {
     })
   })
 
-  // describe('/user/addNote', () => {
-  //   const inputBody = userJSON.UserData3;
-  //   it('given user token should add note to the user profile', (done) => {
-  //     request(app)
-  //       .post('/api/v1/notes')
-  //       .set('token', `${jwToken}`)
-  //       .send(inputBody)
-  //       .end((err, res) => {
-  //         expect(res.statusCode).to.be.equal(201);
-  //         done();
-  //       })
-  //   })
-  // })
+  describe('/user/addNote', () => {
+    const inputBody = userJSON.UserData3;
+    it('given user token should add note to the user profile', (done) => {
+      request(app)
+        .post('/api/v1/notes')
+        .set('token', `${jwToken}`)
+        .send(inputBody)
+        .end((err, res) => {
+          expect(res.statusCode).to.be.equal(201);
+          done();
+        })
+    })
+  })
 
   describe('/notes', () => {
     it('given token should retrieve all the notes of the user', (done) => {
@@ -183,18 +183,18 @@ describe('User APIs Test', () => {
   //     })
   // })
 
-  // describe('/reset Password', () => {
-  //   it('given user when provide new password should be updated in database', (done) => {
-  //     const inputBody = userJSON.resetPassword;
-  //     request(app)
-  //       .put('/api/v1/resetPassword')
-  //       .set('token',`${newJwtoken}`)
-  //       .send(inputBody)
-  //       .end((err,res) => {
-  //         expect(res.statusCode).to.be.equal(200);
-  //       done();
-  //       })
-  //   })
-  // })
+  describe('/reset Password', () => {
+    it('given user when provide new password should be updated in database', (done) => {
+      const inputBody = userJSON.resetPassword;
+      request(app)
+        .put('/api/v1/resetPassword')
+        .set('token',`${newJwtoken}`)
+        .send(inputBody)
+        .end((err,res) => {
+          expect(res.statusCode).to.be.equal(200);
+        done();
+        })
+    })
+  })
 
 });

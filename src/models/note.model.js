@@ -14,10 +14,12 @@ const noteSchema = new Schema(
         type: String,
     },
     isArchieved: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     isDeleted: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     userId: {
         type: String
